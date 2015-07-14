@@ -28,7 +28,7 @@ public class Musica extends ActionBarActivity implements View.OnClickListener,Me
     Boolean reproduint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        player = new Bound();
+        player = new Bound(getApplicationContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musica);
         bound = false;
@@ -102,7 +102,7 @@ public class Musica extends ActionBarActivity implements View.OnClickListener,Me
                 }
                 break;
             case R.id.btn_back:
-                player.stop();
+                player.stop(getApplicationContext());
                 reproduint = false;
                 start_b.setImageDrawable(getResources().getDrawable(R.drawable.ic_media_play));
                 break;

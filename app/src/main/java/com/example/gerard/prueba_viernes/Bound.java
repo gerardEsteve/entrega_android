@@ -1,8 +1,10 @@
 package com.example.gerard.prueba_viernes;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
@@ -15,6 +17,7 @@ import java.io.IOException;
 public class Bound extends Service implements MediaPlayer.OnCompletionListener{
 
    public MediaPlayer mediaPlayer;
+    Uri myUri;
 
     @Override
     public void onCreate() {
@@ -23,22 +26,17 @@ public class Bound extends Service implements MediaPlayer.OnCompletionListener{
        }
 
     String path;
-    public Bound() {
+    public Bound(){}
+     Bound(Context context) {
+         myUri = Uri.parse("android.resource://"+context.getPackageName()+"/" + R.raw.end);
         mediaPlayer = new MediaPlayer();
-        File sdCard = Environment.getExternalStorageDirectory();
-        File song = new File(sdCard.getAbsolutePath() + "/storage/emulated/0/Music/end.mp3");
-        try{
-            String s = song.getAbsolutePath();
-            path = "/storage/emulated/0/Music/end.mp3";
 
-            Log.i("s:",s);
-            mediaPlayer.setDataSource(String.valueOf(path));
+        try {
+            mediaPlayer.setDataSource(context,myUri);
             mediaPlayer.prepare();
             mediaPlayer.setOnCompletionListener(this);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-
         }
 
     }
@@ -58,11 +56,11 @@ public class Bound extends Service implements MediaPlayer.OnCompletionListener{
     public void pausa(){
         mediaPlayer.pause();
     }
-    public void stop() {
+    public void stop(Context context) {
         mediaPlayer.stop();
         mediaPlayer.reset();
         try{
-            mediaPlayer.setDataSource(path);
+            mediaPlayer.setDataSource(context,myUri);
             mediaPlayer.prepare();
             mediaPlayer.setOnCompletionListener(this);
         }

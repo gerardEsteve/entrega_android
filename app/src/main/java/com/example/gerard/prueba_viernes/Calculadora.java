@@ -366,12 +366,9 @@ public class Calculadora extends ActionBarActivity implements View.OnClickListen
                 number(0);
                 break;
             case R.id.ans:
-                if(sumatori||restador||multiplicador||divisor){
-                    resultat_final.setText(primer.toString() +" "+ op +" "+ ans.toString());
-                }
-                else {
-                    resultat_final.setText(ans.toString());
-                }
+                resultat_final.setText(ans.toString());
+                s_primer = ans.toString();
+
                 break;
             case R.id.sum:
                 sumatori = true;
