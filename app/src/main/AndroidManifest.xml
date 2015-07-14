@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gerard.prueba_viernes" >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <activity android:name="com.ppierson.t4jtwitterlogin.T4JTwitterLoginActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
+                android:host="twitterlogin"
+                android:scheme="x-oauthflow-twitter" />
+        </intent-filter>
+    </activity>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/launch"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".login"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PagerHolder"
+            android:label="@string/title_activity_pager_holder"
+            android:parentActivityName=".Selection"
+            android:screenOrientation="portrait" >
+            >
+        </activity>
+        <activity
+            android:name=".Calculadora"
+            android:label="@string/title_activity_calculadora"
+            android:parentActivityName=".Selection" >
+        </activity>
+        <activity
+            android:name=".Selection"
+            android:label="@string/title_activity_selection" >
+        </activity>
+        <activity
+            android:name=".Musica"
+            android:label="@string/title_activity_musica"
+            android:parentActivityName=".Selection"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <service
+            android:name=".Bound"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name=".Perfil"
+            android:label="@string/title_activity_perfil"
+            android:parentActivityName=".Selection"
+            >
+        </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5cc6570b044b5bf0e4f107f8da582974880a88c4" />
+    </application>
+
+</manifest>

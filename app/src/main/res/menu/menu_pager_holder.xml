@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.gerard.prueba_viernes.PagerHolder">
+
+    <item android:id="@+id/clear" android:title="RESET GAME"
+        android:orderInCategory="100" app:showAsAction="never"
+
+        />
+
+    <item android:id="@+id/logout" android:title="Log_out"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+
+    <item android:id="@+id/rank_reset" android:title="RESET RANKING"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

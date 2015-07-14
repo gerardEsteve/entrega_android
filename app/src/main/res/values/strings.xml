@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Gerard_app</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Gerard_app</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pager_holder">PagerHolder</string>
+    <string name="title_activity_calculadora">Calculadora</string>
+    <string name="title_activity_selection">Selection</string>
+    <string name="title_activity_musica">Musica</string>
+    <string name="title_activity_perfil">Perfil</string>
+</resources>

@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".Calculadora">
+
+    <item android:id="@+id/navegadorr" android:title="Navegador"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/call" android:title="Llamar"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/notifications" android:title="Notificaciones"
+        android:orderInCategory="100" app:showAsAction="never">
+
+
+        <menu>
+            <item android:id="@+id/toast" android:title="Toast" android:orderInCategory="100" app:showAsAction="never" android:icon="@drawable/abc_btn_radio_to_on_mtrl_015"  />
+            <item android:id="@+id/estat" android:title="Estat" android:orderInCategory="100" app:showAsAction="never" android:icon="@drawable/abc_btn_radio_to_on_mtrl_015"  />
+            <item android:id="@+id/snack" android:title="Snackbar" android:orderInCategory="100" app:showAsAction="never" android:icon="@drawable/abc_btn_radio_to_on_mtrl_015"  />
+        </menu>
+
+
+    </item>
+
+    <item android:id="@+id/logout" android:title="Log_out"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+
+
+</menu>
